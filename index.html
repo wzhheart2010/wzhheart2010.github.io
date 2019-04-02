@@ -1,28 +1,91 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <!-- import CSS -->
-  <link rel="stylesheet" href="assets/elementui/css/index.css">
-</head>
-<body>
-  <div id="app">
-    <el-button @click="visible = true">Button</el-button>
-    <el-dialog :visible.sync="visible" title="Hello world">
-      <p>Try Element</p>
-    </el-dialog>
-  </div>
-</body>
-  <!-- import Vue before Element -->
-  <script src="assets/elementui/js/vue.js"></script>
-  <!-- import JavaScript -->
-  <script src="assets/elementui/js/index.js"></script>
-  <script>
-    new Vue({
-      el: '#app',
-      data: function() {
-        return { visible: false }
-      }
-    })
-  </script>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="keywords" content="安福相册,安福家园,以图搜图" />
+        <meta name="description" itemprop="description" content="安福图搜 - 莆田本土口碑软件，集安福大数据、搜索、免费分享全网产品、聊天的本土一体化服务方案。" />
+        <title>图搜</title>
+        <link rel="stylesheet" href="assets/elementui/css/index.css">
+        <style>
+            body{font-size:16px;font-family:Arial,Helvetica,sans-serif,"宋体";background:#fff;-webkit-text-size-adjust:100%;}
+            .download-div{
+                float: left;
+                padding: 12px;
+                border: 1px solid #409EFF;
+            }
+
+            .desc-div{
+                margin: auto -12px -12px -12px;
+                text-align: center;
+                background-color: #409EFF;
+                padding: 12px;
+                height: 36px;
+                line-height: 36px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <el-row :gutter="20" style="margin: 0;">
+                <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="12">
+                    <div style="padding: 18px;">
+                        <h1>图搜提示</h1>
+                        <h3>图搜网站进入临时维护！</h3>
+                        <p>1、电脑端用户可继续使用图搜开发的<a :href="ts_toolkit_download_url" target="_blank" style="text-decoration: none; color: #409EFF; font-weight: bold; margin: auto 6px;">【图搜工具箱】（内含免费的新版又拍相册批量下载工具）</a>进行正常访问！</p>
+                        <div class="download-div">
+                            <div style="position: relative;">
+                                <a :href="ts_toolkit_download_url" target="_blank" style="display: block; text-align: center;">
+                                    <img src="assets/default/images/logo2_256px.png" style="width: 120px; height: 120px;" />
+                                </a>
+                                <a :href="ts_toolkit_download_url" target="_blank" style="display: block; position: absolute; top: -6px; right: -6px;">
+                                    <img src="assets/default/images/computer_48px_grey.png" style="width: 24px; height: 24px;" />
+                                </a>
+                            </div>
+                            <div class="desc-div">
+                                <a :href="ts_toolkit_download_url" target="_blank" style="text-decoration: none; color: #409EFF; font-weight: bold; color: white;">
+                                    下载【图搜工具箱】
+                                </a>
+                            </div>
+                        </div>
+                        <br style="clear: both;">
+                        <p>2、手机端用户可继续使用<a :href="ts_app_download_url" target="_blank" style="text-decoration: none; color: #409EFF; font-weight: bold; margin: auto 6px;">【图搜APP】（安卓手机）</a>进行正常访问！</p>
+                        <div class="download-div">
+                            <div style="position: relative;">
+                                <a :href="ts_app_download_url" target="_blank" style="display: block; text-align: center;">
+                                    <img src="assets/default/images/logo2_256px.png" style="width: 120px; height: 120px;" />
+                                </a>
+                                <a :href="ts_app_download_url" target="_blank" style="display: block; position: absolute; top: -6px; right: -6px;">
+                                    <img src="assets/default/images/android_48px_grey.png" style="width: 24px; height: 24px;" />
+                                </a>
+                            </div>
+                            <div class="desc-div">
+                                <a :href="ts_app_download_url" target="_blank" style="text-decoration: none; color: #409EFF; font-weight: bold; color: white;">
+                                    下载 【 图搜 APP 】
+                                </a>
+                            </div>
+                        </div>
+                        <br style="clear: both;">
+                    </div>
+                </el-col>
+            </el-row>
+        </div>
+    </body>
+    <!-- import Vue before Element -->
+    <script src="assets/elementui/js/vue.js"></script>
+    <!-- import JavaScript -->
+    <script src="assets/elementui/js/index.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: function () {
+                return {
+                    visible: false,
+                    ts_toolkit_download_url: '',
+                    ts_app_download_url: ''
+                }
+            }
+        })
+    </script>
 </html>
